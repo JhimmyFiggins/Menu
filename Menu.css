@@ -1,0 +1,127 @@
+:root {
+  --first: #FCF8F8;
+  --second: #FBEFEF;
+  --third: #F9DFDF;
+  --fourth: #F5AFAF;
+}
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: var(--second);
+  margin:0;
+  
+}
+
+#navigation{
+    background-color: var(--bone);
+    height:40px;
+    font-weight:bold;
+}
+
+.nav-link:hover {
+  color: var(--light-aqua) !important;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#food-section{
+    padding: 20px;
+    /* background-image: url(Sakura\ tree.png); */
+    background-size: 100%;
+}
+
+#food_info {
+    border-radius: 40px;
+    width: 900px;
+    height: 500px;
+    background-color: var(--third);
+    margin: 0 auto;
+}
+
+#food_info h2, h3{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.food_details{
+    height:450px;
+    margin-top: 25px;
+    margin-left: 40px;
+    border-radius: 20px;
+    background-color: var(--fourth);   
+    padding-top: 100px;
+    text-align: center;
+}
+
+.coverC{
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    background-color: var(--fourth);
+    border-radius: 30px;
+    max-width: 300px;
+    position: relative;
+}
+#selected_food{
+    margin-left: 10px;
+    margin-top: 175px;
+    width: 200px;
+    height: 100px;
+    
+}
+.cover_container{
+    position: relative;   
+}
+
+.cover_plate {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 200px;
+    height: 100px;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#pasta_carousel{
+    text-align: center;
+}
+.pasta img, .cue img, .soup img{
+    margin-top: 20px;
+    max-height: 102px;
+    max-width: 224px;
+    transition: transform 400ms; 
+}
+/* .pasta img:hover{
+    transform: scale(1.1);
+} 
+.cue img:hover{
+    transform: scale(1.1);
+} 
+.soup img:hover{
+    transform: scale(1.1); 
+} */
+
+.pasta button, .cue button, .soup button{
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(240, 248, 255, 0);
+}
+
+.pasta, .cue, .soup{
+    text-align: center;
+}
+.first, .second, .third{
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
