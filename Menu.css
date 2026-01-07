@@ -30,9 +30,17 @@ body {
   }
 }
 
+#custom_modal{
+    margin: 10px;
+    border-radius: 5px;
+    width: 100px; 
+    height: 100px;
+    position: absolute;
+    background-color: var(--fourth);
+}
+
 #food-section{
     padding: 20px;
-    /* background-image: url(Sakura\ tree.png); */
     background-size: 100%;
 }
 
@@ -70,7 +78,7 @@ body {
     position: relative;
 }
 #selected_food{
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 175px;
     width: 200px;
     height: 100px;
