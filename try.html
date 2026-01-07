@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #output{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            transition: transform 0.9s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="me()">me</button>
+    <button onclick="down()">down</button>
+    <p id="output">e</p>
+
+   
+
+    <script>
+        function me(){
+            const p = document.getElementById('output');
+            p.style.transform = "translate(500px)";     
+            setTimeout( () =>{ p.style.transform = "translate(100px)";   }, 500);
+            
+            
+        }
+
+        function down(){
+            const p = document.getElementById('output');
+              
+        }
+    </script>
+</body>
+</html>

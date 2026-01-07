@@ -57,7 +57,6 @@
                     </div>
                 </div>
                 <div class="col coverC"> 
-                    <!-- <img id="cover_img" src="Cloch.png" alt=""> -->
                     <img id="selected_food" src="Cloch.png" alt="">
                 </div>
             </div>
@@ -70,19 +69,19 @@
                 <div class="carousel-item active pasta">
                     <div class="row first">
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="spag_carb"> 
                                 <img src="Spaghetti Carbonara.png" class="d-block w-100" alt="..."> Spaghetti Carbonara 
                             </button>
                         </div>
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="aglio">
                                 <img src="Aglio Olio.png" class="d-block w-100" alt="...">Aglio Olio 
                             </button>
                         </div>
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="creamy">
                                 <img src="Creamy Garlic.png" class="d-block w-100" alt="...">Creamy Garlic 
                             </button>
@@ -92,19 +91,19 @@
                 <div class="carousel-item cue">
                     <div class="row second">
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="carioca">
                                 <img src="Carioca.png" class="d-block w-100" alt="...">Carioca
                             </button>
                         </div>
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="palitaw">
                                 <img src="Palitaw.png" class="d-block w-100" alt="...">Palitaw
                             </button>
                         </div>
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="sweet_potato">
                                 <img src="Fried Sweet Potato.png" class="d-block w-100" alt="...">Fried Sweet Potato 
                             </button>
@@ -114,19 +113,19 @@
                 <div class="carousel-item soup">
                     <div class="row third">
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="sweet_rbs">
                                 <img src="Sweet Red Bean Soup.png" class="d-block w-100" alt="...">Sweet Red Bean Soup 
                             </button>
                         </div>
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="sweet_rbsc">
                                 <img src="Sweet Red Bean Sandwich.png" class="d-block w-100" alt="...">Red Bean Sandwich 
                             </button>
                         </div>
                         <div class="col-sm-4 cover_container">
-                            <img class="cover_plate" src="Cloch.png" alt="">
+                            <img class="cover_plate" src="Cloche.png" alt="">
                             <button id="mochi">
                                 <img src="Mochi.png" class="d-block w-100" alt="...">Mochi 
                             </button>
@@ -153,6 +152,9 @@
             hideFood();
         });
 
+        //Selected Food
+        let image_SF = document.getElementById('selected_food');
+
         // Event Listeners
 
         //Cover Image
@@ -160,23 +162,19 @@
 
         for (let i = 0; i < coverContainers.length; i++) {
             const container = coverContainers[i];
-            const cloch = container.querySelector(".cover_plate");
+            const Cloche = container.querySelector(".cover_plate");
       
             // Move the cover up on hover over the container
             container.addEventListener("mouseenter", () => {
-                cloch.style.transform = "translate(-50%, -100px)";
+                Cloche.style.transform = "translate(-50%, -100px)";
             });
 
             // Move the cover back when leaving the container or the button image
             container.addEventListener("mouseleave", () => {
-                cloch.style.transform = "translate(-50%, 0px)";
+                Cloche.style.transform = "translate(-50%, 0px)";
             });
         }
 
-        
-        
-        
-        
         
 
         //Carousel Detector 
@@ -190,14 +188,18 @@
         //Pasta
         const spaghetti_carbonara_btn = document.getElementById('spag_carb');
         spaghetti_carbonara_btn.addEventListener("click", () => {
-            showFood();
+            
             renderFood('food_detail', Spaghetti_Carbonara);
+            moveFood();
+            showFood();
+            
         });
 
         const aglio_olio_btn = document.getElementById('aglio');
         aglio_olio_btn.addEventListener("click", () => {
             renderFood('food_detail', Aglio_Olio);
             showFood();
+           
         });
 
         const creamy_garlic_btn = document.getElementById('creamy');
@@ -266,23 +268,22 @@
             Ingredients_Container.appendChild(ul);
         }
         
-        // function hideCover(){
-            
-        //     const selected_food = document.getElementById('selected_food');
-            
-        //     selected_food.style.display = "";
-        // }
-
-        // function showCover(){
-        //     const cover = document.getElementById('cover_img');
-        //     cover.style.display = "";
-        // }
-
         function showFood(){
             const selected_food = document.getElementById('selected_food');
+            
             selected_food.style.display = "";
+            selected_food.offsetHeight; 
+            selected_food.style.transform = "translate(-50%, -30px)";
+            setTimeout( () => {image_SF.style.transform = "translate(-50%, 10px)";   }, 500);
+            
         }
 
+        function moveFood(){
+            const selected_food = document.getElementById('selected_food');
+            selected_food.style.display = "";
+            selected_food.offsetHeight; 
+            
+        }
         function hideFood(){
             const selected_food = document.getElementById('selected_food');
             selected_food.style.display = "none";
