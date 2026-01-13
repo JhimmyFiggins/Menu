@@ -1,0 +1,29 @@
+:root {
+  --first: #FCF8F8;
+  --second: #FBEFEF;
+  --third: #F9DFDF;
+  --fourth: #F5AFAF;
+}
+
+
+body{
+    font-family: "Pixelify Sans", sans-serif;
+    background-color: var(--fourth);
+}
+
+
+#screen, #meme {
+    color: black;
+    margin-top: 19rem;
+}
+
+.bobC{
+
+    position:relative;
+}
+
+
+
+a:link {
+    text-decoration: none;
+}

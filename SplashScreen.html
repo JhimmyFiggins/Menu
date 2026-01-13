@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="SplashScreen.css">
+</head>
+<body>
+    <!-- Msg  -->
+    <div class="container text-center bobC">
+        <div class="row">
+            <div id="0" class="col box">
+                
+            </div>
+            <div id="1" class="col box">
+                
+            </div>
+            <div id="2" class="col box">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm text-center cover">
+        <h1  class="w-100 p-3" id="screen">Click me me me! Please >(U w U)></h1>
+    </div>
+
+    <div class="container text-center bobC">
+        <div class="row">
+            <div id="3" class="col box">
+                
+            </div>
+            <div id="4" class="col box">
+                
+            </div>
+            <div id="5" class="col box">
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let meme = document.getElementById('screen');
+        let showChibi = 0;
+        let authorization = 0;
+
+        meme.addEventListener("click", () => {
+
+            //Remove recent chibi on the field
+            for (let i = 0; i < 6; i++){
+                const image_me = document.getElementById([i]);
+                image_me.innerHTML = "";
+            }
+
+            //Show a chibi in random col
+            const number = Math.floor(Math.random() * 6);
+            const image_me = document.getElementById(number);
+            image_me.innerHTML = '<img id="meAnimq" src=" Me.gif" alt="">' ;
+
+            showChibi += 1;
+            if(showChibi > 0 && showChibi < 10){
+                const number = Math.floor(Math.random() * 4);
+                const wordsArray = ["Click the hooman not me", "you can stop clicking me", "NOT ME!", "DON'T CLICK THE TEXT"]
+                meme.innerHTML = wordsArray[number];
+                console.log(showChibi);
+            } else if (showChibi > 9){
+                const number = Math.floor(Math.random() * 4);
+                const wordsArray2 = ["You're still doing this?", "?????????", "ARE YOU FR?", " -__-"]
+                meme.innerHTML = wordsArray2[number];
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function(event) {
+            const chibiArray = document.getElementsByClassName("box");
+            for (let j = 0; j < 6; j++){
+                chibiArray[j].addEventListener("click", () =>{
+                    
+                    for (let i = 0; i < 6; i++){
+                        const image_me = document.getElementById([i]);
+                        image_me.innerHTML = "";
+                    }
+                    authorization += 1;
+                    const number = Math.floor(Math.random() * 6);
+                    const image_me = document.getElementById(number);
+                    image_me.innerHTML = '<img id="meAnimq" src=" Me.gif" alt="">' ;
+
+                    if(authorization > 10){
+                        meme.innerHTML = "";
+                        meme.innerHTML = '<a href="Menu.html">Click to proceed! Please >(U w U)> </a>';
+                    }
+                })
+                
+            }
+        });
+    </script>
+    
+</body>
+</html>
